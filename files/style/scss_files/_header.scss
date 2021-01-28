@@ -6,9 +6,12 @@ header {
     background: $space;
 
     .title {
+        position: relative;
+        z-index: 10;
         margin-bottom: 75px;
 
         h1 {
+            text-align: center;
             color: $light-color;
             font-size: 64px;
             text-shadow: 0 5px 5px $shadow;
@@ -26,6 +29,7 @@ header {
         background: $card-bg;
         border: 1px solid $border;
         border-radius: 5px;
+        margin: 0 25px;
         padding: 25px;
         max-width: 800px;
         box-shadow: 3px 3px 5px $shadow;
@@ -91,6 +95,32 @@ header {
             box-shadow: 3px 3px 5px $shadow;
         }
     }
+    aside {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 15;
+        background: $card-bg;
+        padding: 10px 15px;
+        border-bottom-left-radius: 3px;
+        border-left: 1px solid $border;
+        border-bottom: 1px solid $border;
+        box-shadow: 2px 2px 5px $shadow;
+
+        h3 {
+            font-size: 20px;
+            color: $light-color;
+
+            a {
+                font-weight: 700;
+                -webkit-text-fill-color: transparent;
+                animation: bg_rotate 3s linear infinite;
+                background: linear-gradient(90deg, rgba(180, 15, 215, 1) 0%, rgba(125, 15, 215, 1) 50%, rgba(180, 15, 215, 1) 100%);
+                background-size: 200% 100%;
+                -webkit-background-clip: text;
+            }
+        }
+    }
     .wave {
         overflow: hidden;
         position: absolute;
@@ -112,5 +142,41 @@ header {
     }
     100% {
         background-position: -200% 0;
+    }
+}
+
+// Responsive :
+@media screen and (max-width: 985px) {
+    header .title h1 {
+        font-size: 44px;
+    }
+    header .title p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    header .title {
+        padding: 15px;
+        margin-bottom: 40px;
+    }
+    header .title h1 {
+        font-size: 32px;
+    }
+    header .title p {
+        font-size: 16px;
+    }
+    header #start {
+        font-size: 20px;
+    }
+    header .rules h2 {
+        font-size: 20px;
+        transform: translateY(-125%);
+    }
+    header .rules p {
+        font-size: 16px;
+    }
+    header .rules li {
+        font-size: 18px;
     }
 }
