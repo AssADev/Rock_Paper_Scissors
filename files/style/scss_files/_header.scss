@@ -1,0 +1,116 @@
+header {
+    @include flexColumn;
+
+    position: relative;
+    min-height: 100vh;
+    background: $space;
+
+    .title {
+        margin-bottom: 75px;
+
+        h1 {
+            color: $light-color;
+            font-size: 64px;
+            text-shadow: 0 5px 5px $shadow;
+        }
+        p {
+            text-align: center;
+            color: $constrast;
+            font-size: 20px;
+            margin-top: 14px;
+        }
+    }
+    .rules {
+        position: relative;
+        z-index: 10;
+        background: $card-bg;
+        border: 1px solid $border;
+        border-radius: 5px;
+        padding: 25px;
+        max-width: 800px;
+        box-shadow: 3px 3px 5px $shadow;
+        margin-bottom: 25px;
+
+        h2 {
+            position: absolute;
+            transform: translateY(-115%);
+            background: $light-color;
+            padding: 5px 10px;
+            border-radius: 3px;
+            box-shadow: 3px 3px 5px $shadow;
+        }
+        p {
+            color: $light-color;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        li {
+            text-align: center;
+            font-size: 22px;
+            color: $light-color;
+
+            span {
+                font-weight: 700;
+                -webkit-text-fill-color: transparent;
+                animation: bg_rotate 3s linear infinite;
+
+                &#meteorite {
+                    background: linear-gradient(90deg, rgba(56, 219, 157, 1) 0%, rgba(10, 148, 53, 1) 50%, rgba(56, 219, 157, 1) 100%);
+                    background-size: 200% 100%;
+                    -webkit-background-clip: text;
+                }
+                &#star {
+                    background: linear-gradient(90deg, rgba(215, 209, 15, 1) 0%, rgb(203, 157, 29) 50%, rgba(215, 209, 15, 1) 100%);
+                    background-size: 200% 100%;
+                    -webkit-background-clip: text;
+                }
+                &#rocket {
+                    background: linear-gradient(90deg, rgba(15, 215, 213, 1) 0%, rgb(35, 118, 212) 50%, rgba(15, 215, 213, 1) 100%);
+                    background-size: 200% 100%;
+                    -webkit-background-clip: text;
+                }
+            }
+        }
+    }
+    #start {
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+        background: transparent;
+        color: $constrast;
+        font-size: 24px;
+        font-weight: 700;
+        border: 2px solid $constrast;
+        border-radius: 5px;
+        padding: 10px 15px;
+        transition: 0.3s;
+
+        &:hover {
+            color: $light-color;
+            background: $constrast;
+            box-shadow: 3px 3px 5px $shadow;
+        }
+    }
+    .wave {
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+    }
+    #particles-js {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+// Keyframes :
+@keyframes bg_rotate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

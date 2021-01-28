@@ -1,8 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: "Space Mono", monospace;
 }
 
-@import "scss_files/_variables.scss"
+h1,
+h2,
+h3 {
+    font-family: "Orbitron", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+@import "scss_files/_variables.scss";
+@import "scss_files/_mixin.scss";
+@import "scss_files/_header.scss";
+@import "scss_files/_game.scss";
