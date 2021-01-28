@@ -1,1 +1,1 @@
-# bear-man-gun
+# Bear, Man and Gun
