@@ -1,1 +1,1 @@
-# Bear, Man and Gun
+# Rock, Paper & Scissors Project
