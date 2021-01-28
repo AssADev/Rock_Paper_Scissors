@@ -9,6 +9,12 @@
     font-family: "Space Mono", monospace;
 }
 
+body {
+    background: #1b1e3d;
+    // overflow: hidden;
+}
+
+// Reset :
 h1,
 h2 {
     font-family: "Orbitron", sans-serif;
@@ -23,6 +29,12 @@ ul {
     list-style: none;
 }
 
+body.ingame header,
+body.ingame .game {
+    transform: translateY(-100%);
+}
+
+// Import SCSS :
 @import "scss_files/_variables.scss";
 @import "scss_files/_mixin.scss";
 @import "scss_files/_header.scss";

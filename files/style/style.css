@@ -9,6 +9,10 @@
   font-family: "Space Mono", monospace;
 }
 
+body {
+  background: #1b1e3d;
+}
+
 h1,
 h2 {
   font-family: "Orbitron", sans-serif;
@@ -21,6 +25,12 @@ a {
 
 ul {
   list-style: none;
+}
+
+body.ingame header,
+body.ingame .game {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 header {
@@ -40,6 +50,8 @@ header {
   position: relative;
   min-height: 100vh;
   background: #1b1e3d;
+  -webkit-transition: 0.6s cubic-bezier(0.4, 0, 0.35, 1);
+  transition: 0.6s cubic-bezier(0.4, 0, 0.35, 1);
 }
 
 header .title {
@@ -150,7 +162,7 @@ header #start:hover {
 }
 
 header aside {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 15;
@@ -245,5 +257,13 @@ header #particles-js {
   header .rules li {
     font-size: 18px;
   }
+}
+
+.game {
+  position: relative;
+  min-height: 100vh;
+  background: #1b1e3d;
+  -webkit-transition: 0.6s cubic-bezier(0.4, 0, 0.35, 1);
+  transition: 0.6s cubic-bezier(0.4, 0, 0.35, 1);
 }
 /*# sourceMappingURL=style.css.map */
