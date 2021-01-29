@@ -10,7 +10,7 @@
 }
 
 body {
-    background: #1b1e3d;
+    background: #171933;
     // overflow: hidden;
 }
 
@@ -20,7 +20,8 @@ h2 {
     font-family: "Orbitron", sans-serif;
 }
 
-a {
+a,
+button {
     text-decoration: none;
     cursor: pointer;
 }
@@ -32,6 +33,9 @@ ul {
 body.ingame header,
 body.ingame .game {
     transform: translateY(-100%);
+}
+
+svg {
 }
 
 // Import SCSS :
