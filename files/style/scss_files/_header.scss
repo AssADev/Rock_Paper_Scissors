@@ -136,16 +136,6 @@ header {
     }
 }
 
-// Keyframes :
-@keyframes bg_rotate {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
-}
-
 // Responsive :
 @media screen and (max-width: 985px) {
     header .title h1 {

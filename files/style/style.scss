@@ -39,3 +39,13 @@ body.ingame .game {
 @import "scss_files/_mixin.scss";
 @import "scss_files/_header.scss";
 @import "scss_files/_game.scss";
+
+// Keyframes :
+@keyframes bg_rotate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

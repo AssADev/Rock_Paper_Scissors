@@ -4,10 +4,10 @@
     justify-content: center;
 }
 
-@mixin flexLeft {
+@mixin flexAround {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-around;
 }
 
 @mixin flexBetween {

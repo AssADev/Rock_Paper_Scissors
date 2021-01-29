@@ -3,9 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Meteorite, Star and Rocket</title>
+        <title>AssA - Meteorite, Star and Rocket</title>
         <link rel="stylesheet" href="style/style.css" />
-        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
     </head>
     <body>
         <header>
@@ -48,6 +53,29 @@
                     d="M0,96L80,101.3C160,107,320,117,480,106.7C640,96,800,64,960,58.7C1120,53,1280,75,1360,85.3L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
                 ></path>
             </svg>
+            <div class="points">
+                <div class="user_points">
+                    <i class="fas fa-user-astronaut"></i>
+                    <div class="win_points">
+                        <p>0</p>
+                    </div>
+                </div>
+                <svg height="2px" width="30px" viewBox="0 0 30 2">
+                    <line x1="0px" y1="1px" x2="30px" y2="1px" stroke="#e0e6ff" stroke-width="2"></line>
+                </svg>
+                <div class="rounds">
+                    <p><span id="actual_round">1</span> / 5</p>
+                </div>
+                <svg height="2px" width="30px" viewBox="0 0 30 2">
+                    <line x1="0px" y1="1px" x2="30px" y2="1px" stroke="#e0e6ff" stroke-width="2"></line>
+                </svg>
+                <div class="user_points">
+                    <div class="win_points">
+                        <p>0</p>
+                    </div>
+                    <i class="fas fa-robot"></i>
+                </div>
+            </div>
         </article>
         <script type="text/javascript" src="js/app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>

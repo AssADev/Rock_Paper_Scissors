@@ -3,4 +3,53 @@
     min-height: 100vh;
     background: $space;
     transition: 0.6s cubic-bezier(0.4, 0, 0.35, 1);
+
+    .points {
+        @include flexAround;
+
+        max-width: 400px;
+        max-height: 55px;
+        background: $card-bg;
+        border: 1px solid $border;
+        border-radius: 5px;
+        box-shadow: 3px 3px 5px $shadow;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+
+        .user_points {
+            @include flexMid;
+
+            .win_points {
+                font-size: 26px;
+                color: $light-color;
+                background: $purple;
+                border-radius: 3px;
+                box-shadow: 2px 2px 5px $shadow;
+                padding: 0 10px;
+
+                &:first-child {
+                    margin-right: 15px;
+                }
+                &:last-child {
+                    margin-left: 15px;
+                }
+            }
+            i {
+                color: $constrast;
+                font-size: 24px;
+            }
+        }
+        .rounds {
+            background: $purple;
+            border-radius: 3px;
+            box-shadow: 2px 2px 5px $shadow;
+            padding: 0 10px;
+
+            p {
+                color: $light-color;
+                font-size: 26px;
+            }
+        }
+    }
 }
