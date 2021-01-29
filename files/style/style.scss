@@ -7,6 +7,7 @@
     box-sizing: border-box;
     outline: none;
     font-family: "Space Mono", monospace;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -48,6 +49,20 @@ ul {
     list-style: none;
 }
 
+.wave {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
+#particles-js {
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    top: 0;
+}
 // H3 & Span :
 h3,
 .rules li span {

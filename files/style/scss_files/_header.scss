@@ -55,11 +55,11 @@ header {
             color: $light-color;
         }
     }
-    #start {
+    a[href^="#"] {
         position: relative;
+        color: $constrast;
         z-index: 10;
         background: transparent;
-        color: $constrast;
         font-size: 24px;
         font-weight: 700;
         border: 2px solid $constrast;
@@ -96,24 +96,8 @@ header {
                 background: linear-gradient(90deg, rgba(180, 15, 215, 1) 0%, rgba(125, 15, 215, 1) 50%, rgba(180, 15, 215, 1) 100%);
                 background-size: 200% 100%;
                 -webkit-background-clip: text;
-                transition: 0.3s;
-
-                &:hover {
-                }
             }
         }
-    }
-    .wave {
-        overflow: hidden;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 5;
-    }
-    #particles-js {
-        position: absolute;
-        height: 100%;
-        width: 100%;
     }
 }
 

@@ -11,7 +11,7 @@
         top: 0;
         left: 0;
     }
-    #back_btn {
+    a {
         position: absolute;
         z-index: 5;
         top: 25px;
@@ -91,6 +91,8 @@
 }
 
 .interface_game {
+    position: relative;
+    z-index: 10;
     display: grid;
     grid-template-columns: 1.6fr 0.8fr;
     grid-template-rows: repeat(2, 1fr);
@@ -118,7 +120,7 @@
             font-size: 18px;
             margin-bottom: 10px;
         }
-        .ojects {
+        .objects {
             @include flexAround;
 
             .object {
@@ -174,7 +176,7 @@
             border-radius: 5px;
             padding: 15px;
             box-shadow: 3px 3px 5px $shadow;
-            max-height: 215px;
+            height: 215px;
             overflow-y: scroll;
 
             &::-webkit-scrollbar {
@@ -237,23 +239,137 @@
                 }
             }
         }
-        #launch_round {
-            width: 100%;
-            background: transparent;
-            color: $constrast;
-            font-size: 22px;
-            font-weight: 700;
-            border: 2px solid $constrast;
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin-top: 25px;
-            transition: 0.3s;
+        .btn {
+            @include flexMid;
 
-            &:hover {
-                color: $light-color;
-                background: $constrast;
-                box-shadow: 3px 3px 5px $shadow;
+            margin-top: 25px;
+
+            #launch_round,
+            #reset_btn {
+                background: transparent;
+                color: $constrast;
+                font-size: 22px;
+                font-weight: 700;
+                border: 2px solid $constrast;
+                border-radius: 5px;
+                padding: 10px 15px;
+                transition: 0.3s;
+
+                &:hover {
+                    color: $light-color;
+                    background: $constrast;
+                    box-shadow: 3px 3px 5px $shadow;
+                }
+            }
+            #launch_round {
+                width: 100%;
+                margin-right: 15px;
+            }
+            #reset_btn {
+                height: 100%;
+                border: 2px solid #ff2525;
+                color: #ff2525;
+
+                &:hover {
+                    color: $light-color;
+                    background: #ff2525;
+                    border: 2px solid #ff2525;
+                    box-shadow: 3px 3px 5px $shadow;
+                }
             }
         }
+    }
+}
+
+// Responsive :
+@media screen and (max-width: 1120px) {
+    .interface_game {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-gap: 35px;
+    }
+    .game .points {
+        margin-top: 90px;
+    }
+    .interface_game .logs h2 {
+        transform: translate(130%, 45%);
+        bottom: 100%;
+        right: 100%;
+    }
+    .interface_game .right_side {
+        grid-row: 3;
+    }
+    .interface_game .right_side .computer_actions h2 {
+        transform: translate(160%, -115%);
+        right: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .game {
+        padding: 10px;
+    }
+    .game .points .user_points .win_points {
+        font-size: 20px;
+    }
+    .game .points .user_points i {
+        font-size: 20px;
+    }
+    .game .points .rounds p {
+        font-size: 20px;
+    }
+    .interface_game .objects_choice p {
+        font-size: 16px;
+    }
+    .interface_game .log .actions p {
+        font-size: 16px;
+    }
+    .interface_game .right_side .computer_actions {
+        height: auto;
+    }
+    .interface_game .right_side .btn #launch_round,
+    .interface_game .right_side .btn #reset_btn {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .game .interface_game h2 {
+        font-size: 20px !important;
+    }
+    .interface_game .objects_choice h2 {
+        transform: translateY(-125%);
+    }
+    .interface_game .objects_choice .objects {
+        flex-direction: column;
+    }
+    .interface_game .objects_choice .objects .object {
+        margin-top: 15px;
+    }
+    .interface_game .right_side .computer_actions h2 {
+        transform: translate(160%, -125%);
+    }
+    .interface_game .right_side .computer_actions .computer_choice img {
+        width: 75%;
+    }
+    .interface_game .right_side .computer_actions .last_choice {
+        margin-top: 25px;
+    }
+    .interface_game .right_side .computer_actions .last_choice p {
+        font-size: 20px;
+    }
+    .interface_game .right_side .computer_actions .last_choice h3 {
+        font-size: 22px;
+    }
+    .interface_game .right_side .btn {
+        flex-direction: column;
+    }
+    .interface_game .right_side .btn #launch_round {
+        margin-right: 0;
+    }
+    .interface_game .right_side .btn #reset_btn {
+        width: 100%;
+        margin-top: 15px;
     }
 }

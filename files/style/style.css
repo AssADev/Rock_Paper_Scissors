@@ -7,6 +7,7 @@
           box-sizing: border-box;
   outline: none;
   font-family: "Space Mono", monospace;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -44,6 +45,21 @@ button {
 
 ul {
   list-style: none;
+}
+
+.wave {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+#particles-js {
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  top: 0;
 }
 
 h3,
@@ -156,11 +172,11 @@ header .rules li {
   color: #e0e6ff;
 }
 
-header #start {
+header a[href^="#"] {
   position: relative;
+  color: #6495ff;
   z-index: 10;
   background: transparent;
-  color: #6495ff;
   font-size: 24px;
   font-weight: 700;
   border: 2px solid #6495ff;
@@ -170,7 +186,7 @@ header #start {
   transition: 0.3s;
 }
 
-header #start:hover {
+header a[href^="#"]:hover {
   color: #e0e6ff;
   background: #6495ff;
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
@@ -205,22 +221,6 @@ header aside h4 a {
   background: linear-gradient(90deg, #b40fd7 0%, #7d0fd7 50%, #b40fd7 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-header .wave {
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-}
-
-header #particles-js {
-  position: absolute;
-  height: 100%;
-  width: 100%;
 }
 
 @media screen and (max-width: 985px) {
@@ -286,7 +286,7 @@ header #particles-js {
   left: 0;
 }
 
-.game #back_btn {
+.game a {
   position: absolute;
   z-index: 5;
   top: 25px;
@@ -297,12 +297,12 @@ header #particles-js {
   font-size: 20px;
 }
 
-.game #back_btn:hover::after {
+.game a:hover::after {
   left: 0;
   width: 100%;
 }
 
-.game #back_btn::before, .game #back_btn::after {
+.game a::before, .game a::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -317,7 +317,7 @@ header #particles-js {
   transition: 0.4s;
 }
 
-.game #back_btn::after {
+.game a::after {
   background: -webkit-gradient(linear, left top, right top, from(#b40fd7), color-stop(50%, #7d0fd7), to(#b40fd7));
   background: linear-gradient(90deg, #b40fd7 0%, #7d0fd7 50%, #b40fd7 100%);
   width: 0;
@@ -388,6 +388,8 @@ header #particles-js {
 }
 
 .interface_game {
+  position: relative;
+  z-index: 10;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.6fr 0.8fr;
@@ -425,7 +427,7 @@ header #particles-js {
   margin-bottom: 10px;
 }
 
-.interface_game .objects_choice .ojects {
+.interface_game .objects_choice .objects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,7 +438,7 @@ header #particles-js {
       justify-content: space-around;
 }
 
-.interface_game .objects_choice .ojects .object {
+.interface_game .objects_choice .objects .object {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,16 +463,16 @@ header #particles-js {
   cursor: pointer;
 }
 
-.interface_game .objects_choice .ojects .object.active {
+.interface_game .objects_choice .objects .object.active {
   background: #5a63ff;
 }
 
-.interface_game .objects_choice .ojects .object.active img {
+.interface_game .objects_choice .objects .object.active img {
   -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 
-.interface_game .objects_choice .ojects .object img {
+.interface_game .objects_choice .objects .object img {
   width: 125px;
   margin-bottom: 10px;
   -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
@@ -511,7 +513,7 @@ header #particles-js {
   padding: 15px;
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-  max-height: 215px;
+  height: 215px;
   overflow-y: scroll;
 }
 
@@ -609,8 +611,21 @@ header #particles-js {
   font-size: 26px;
 }
 
-.interface_game .right_side #launch_round {
-  width: 100%;
+.interface_game .right_side .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+
+.interface_game .right_side .btn #launch_round,
+.interface_game .right_side .btn #reset_btn {
   background: transparent;
   color: #6495ff;
   font-size: 22px;
@@ -618,16 +633,141 @@ header #particles-js {
   border: 2px solid #6495ff;
   border-radius: 5px;
   padding: 10px 15px;
-  margin-top: 25px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.interface_game .right_side #launch_round:hover {
+.interface_game .right_side .btn #launch_round:hover,
+.interface_game .right_side .btn #reset_btn:hover {
   color: #e0e6ff;
   background: #6495ff;
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.interface_game .right_side .btn #launch_round {
+  width: 100%;
+  margin-right: 15px;
+}
+
+.interface_game .right_side .btn #reset_btn {
+  height: 100%;
+  border: 2px solid #ff2525;
+  color: #ff2525;
+}
+
+.interface_game .right_side .btn #reset_btn:hover {
+  color: #e0e6ff;
+  background: #ff2525;
+  border: 2px solid #ff2525;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 1120px) {
+  .interface_game {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+    grid-gap: 35px;
+  }
+  .game .points {
+    margin-top: 90px;
+  }
+  .interface_game .logs h2 {
+    -webkit-transform: translate(130%, 45%);
+            transform: translate(130%, 45%);
+    bottom: 100%;
+    right: 100%;
+  }
+  .interface_game .right_side {
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  .interface_game .right_side .computer_actions h2 {
+    -webkit-transform: translate(160%, -115%);
+            transform: translate(160%, -115%);
+    right: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .game {
+    padding: 10px;
+  }
+  .game .points .user_points .win_points {
+    font-size: 20px;
+  }
+  .game .points .user_points i {
+    font-size: 20px;
+  }
+  .game .points .rounds p {
+    font-size: 20px;
+  }
+  .interface_game .objects_choice p {
+    font-size: 16px;
+  }
+  .interface_game .log .actions p {
+    font-size: 16px;
+  }
+  .interface_game .right_side .computer_actions {
+    height: auto;
+  }
+  .interface_game .right_side .btn #launch_round,
+  .interface_game .right_side .btn #reset_btn {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .game .interface_game h2 {
+    font-size: 20px !important;
+  }
+  .interface_game .objects_choice h2 {
+    -webkit-transform: translateY(-125%);
+            transform: translateY(-125%);
+  }
+  .interface_game .objects_choice .objects {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .interface_game .objects_choice .objects .object {
+    margin-top: 15px;
+  }
+  .interface_game .right_side .computer_actions h2 {
+    -webkit-transform: translate(160%, -125%);
+            transform: translate(160%, -125%);
+  }
+  .interface_game .right_side .computer_actions .computer_choice img {
+    width: 75%;
+  }
+  .interface_game .right_side .computer_actions .last_choice {
+    margin-top: 25px;
+  }
+  .interface_game .right_side .computer_actions .last_choice p {
+    font-size: 20px;
+  }
+  .interface_game .right_side .computer_actions .last_choice h3 {
+    font-size: 22px;
+  }
+  .interface_game .right_side .btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .interface_game .right_side .btn #launch_round {
+    margin-right: 0;
+  }
+  .interface_game .right_side .btn #reset_btn {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
 @-webkit-keyframes bg_rotate {
