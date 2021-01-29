@@ -53,28 +53,6 @@ header {
             text-align: center;
             font-size: 22px;
             color: $light-color;
-
-            span {
-                font-weight: 700;
-                -webkit-text-fill-color: transparent;
-                animation: bg_rotate 3s linear infinite;
-
-                &#meteorite {
-                    background: linear-gradient(90deg, rgb(219, 129, 56) 0%, rgb(211, 79, 27) 50%, rgb(219, 129, 56) 100%);
-                    background-size: 200% 100%;
-                    -webkit-background-clip: text;
-                }
-                &#star {
-                    background: linear-gradient(90deg, rgba(215, 209, 15, 1) 0%, rgb(203, 157, 29) 50%, rgba(215, 209, 15, 1) 100%);
-                    background-size: 200% 100%;
-                    -webkit-background-clip: text;
-                }
-                &#rocket {
-                    background: linear-gradient(90deg, rgba(15, 215, 213, 1) 0%, rgb(35, 118, 212) 50%, rgba(15, 215, 213, 1) 100%);
-                    background-size: 200% 100%;
-                    -webkit-background-clip: text;
-                }
-            }
         }
     }
     #start {
@@ -107,7 +85,7 @@ header {
         border-bottom: 1px solid $border;
         box-shadow: 2px 2px 5px $shadow;
 
-        h3 {
+        h4 {
             font-size: 20px;
             color: $light-color;
 
@@ -118,6 +96,10 @@ header {
                 background: linear-gradient(90deg, rgba(180, 15, 215, 1) 0%, rgba(125, 15, 215, 1) 50%, rgba(180, 15, 215, 1) 100%);
                 background-size: 200% 100%;
                 -webkit-background-clip: text;
+                transition: 0.3s;
+
+                &:hover {
+                }
             }
         }
     }

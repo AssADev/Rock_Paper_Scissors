@@ -13,6 +13,24 @@ body {
   background: #171933;
 }
 
+body.ingame header,
+body.ingame .game {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+::-webkit-scrollbar {
+  background: #1b1e3d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2e5e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a63ff;
+}
+
 h1,
 h2 {
   font-family: "Orbitron", sans-serif;
@@ -28,10 +46,36 @@ ul {
   list-style: none;
 }
 
-body.ingame header,
-body.ingame .game {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+h3,
+.rules li span {
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: bg_rotate 3s linear infinite;
+          animation: bg_rotate 3s linear infinite;
+}
+
+h3#meteorite,
+.rules li span#meteorite {
+  background: -webkit-gradient(linear, left top, right top, from(#db8138), color-stop(50%, #d34f1b), to(#db8138));
+  background: linear-gradient(90deg, #db8138 0%, #d34f1b 50%, #db8138 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+}
+
+h3#star,
+.rules li span#star {
+  background: -webkit-gradient(linear, left top, right top, from(#d7d10f), color-stop(50%, #cb9d1d), to(#d7d10f));
+  background: linear-gradient(90deg, #d7d10f 0%, #cb9d1d 50%, #d7d10f 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+}
+
+h3#rocket,
+.rules li span#rocket {
+  background: -webkit-gradient(linear, left top, right top, from(#0fd7d5), color-stop(50%, #2376d4), to(#0fd7d5));
+  background: linear-gradient(90deg, #0fd7d5 0%, #2376d4 50%, #0fd7d5 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
 }
 
 header {
@@ -112,34 +156,6 @@ header .rules li {
   color: #e0e6ff;
 }
 
-header .rules li span {
-  font-weight: 700;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: bg_rotate 3s linear infinite;
-          animation: bg_rotate 3s linear infinite;
-}
-
-header .rules li span#meteorite {
-  background: -webkit-gradient(linear, left top, right top, from(#db8138), color-stop(50%, #d34f1b), to(#db8138));
-  background: linear-gradient(90deg, #db8138 0%, #d34f1b 50%, #db8138 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-}
-
-header .rules li span#star {
-  background: -webkit-gradient(linear, left top, right top, from(#d7d10f), color-stop(50%, #cb9d1d), to(#d7d10f));
-  background: linear-gradient(90deg, #d7d10f 0%, #cb9d1d 50%, #d7d10f 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-}
-
-header .rules li span#rocket {
-  background: -webkit-gradient(linear, left top, right top, from(#0fd7d5), color-stop(50%, #2376d4), to(#0fd7d5));
-  background: linear-gradient(90deg, #0fd7d5 0%, #2376d4 50%, #0fd7d5 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-}
-
 header #start {
   position: relative;
   z-index: 10;
@@ -175,12 +191,12 @@ header aside {
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-header aside h3 {
+header aside h4 {
   font-size: 20px;
   color: #e0e6ff;
 }
 
-header aside h3 a {
+header aside h4 a {
   font-weight: 700;
   -webkit-text-fill-color: transparent;
   -webkit-animation: bg_rotate 3s linear infinite;
@@ -189,6 +205,8 @@ header aside h3 a {
   background: linear-gradient(90deg, #b40fd7 0%, #7d0fd7 50%, #b40fd7 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 header .wave {
@@ -347,14 +365,7 @@ header #particles-js {
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   padding: 0 10px;
-}
-
-.game .points .user_points .win_points:first-child {
-  margin-right: 15px;
-}
-
-.game .points .user_points .win_points:last-child {
-  margin-left: 15px;
+  margin: 0 10px;
 }
 
 .game .points .user_points i {
@@ -368,31 +379,12 @@ header #particles-js {
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   padding: 0 10px;
+  margin: 0 10px;
 }
 
 .game .points .rounds p {
   color: #e0e6ff;
   font-size: 26px;
-}
-
-.game #launch_round {
-  background: transparent;
-  color: #6495ff;
-  font-size: 22px;
-  font-weight: 700;
-  border: 2px solid #6495ff;
-  border-radius: 5px;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.game #launch_round:hover {
-  color: #e0e6ff;
-  background: #6495ff;
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 .interface_game {
@@ -485,34 +477,6 @@ header #particles-js {
           filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
 }
 
-.interface_game .objects_choice .ojects .object h3 {
-  font-weight: 700;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: bg_rotate 3s linear infinite;
-          animation: bg_rotate 3s linear infinite;
-}
-
-.interface_game .objects_choice .ojects .object h3#meteorite {
-  background: -webkit-gradient(linear, left top, right top, from(#db8138), color-stop(50%, #d34f1b), to(#db8138));
-  background: linear-gradient(90deg, #db8138 0%, #d34f1b 50%, #db8138 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-}
-
-.interface_game .objects_choice .ojects .object h3#star {
-  background: -webkit-gradient(linear, left top, right top, from(#d7d10f), color-stop(50%, #cb9d1d), to(#d7d10f));
-  background: linear-gradient(90deg, #d7d10f 0%, #cb9d1d 50%, #d7d10f 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-}
-
-.interface_game .objects_choice .ojects .object h3#rocket {
-  background: -webkit-gradient(linear, left top, right top, from(#0fd7d5), color-stop(50%, #2376d4), to(#0fd7d5));
-  background: linear-gradient(90deg, #0fd7d5 0%, #2376d4 50%, #0fd7d5 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-}
-
 .interface_game .logs {
   -ms-grid-row: 2;
   grid-row: 2;
@@ -547,7 +511,13 @@ header #particles-js {
   padding: 15px;
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  max-height: 215px;
   overflow-y: scroll;
+}
+
+.interface_game .logs .actions::-webkit-scrollbar {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .interface_game .logs .actions p {
@@ -555,11 +525,15 @@ header #particles-js {
   line-height: 1.8;
 }
 
-.interface_game .computer_actions {
+.interface_game .right_side {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / span 2;
+}
+
+.interface_game .right_side .computer_actions {
   position: relative;
+  height: calc(100% - 82px);
   background: #22244d;
   border: 1px solid #2a2e5e;
   border-radius: 5px;
@@ -568,7 +542,7 @@ header #particles-js {
   padding: 25px;
 }
 
-.interface_game .computer_actions h2 {
+.interface_game .right_side .computer_actions h2 {
   position: absolute;
   right: 0;
   -webkit-transform: translate(-50%, -115%);
@@ -576,6 +550,82 @@ header #particles-js {
   background: #e0e6ff;
   padding: 5px 10px;
   border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.interface_game .right_side .computer_actions .computer_choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #282b5c;
+  border-radius: 3px;
+  border: 1px solid #2a2e5e;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  padding: 10px 15px 5px;
+}
+
+.interface_game .right_side .computer_actions .computer_choice img {
+  width: auto;
+  margin-bottom: 10px;
+  -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
+}
+
+.interface_game .right_side .computer_actions .last_choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 35px;
+}
+
+.interface_game .right_side .computer_actions .last_choice p {
+  color: #e0e6ff;
+  font-size: 22px;
+}
+
+.interface_game .right_side .computer_actions .last_choice h3 {
+  font-size: 26px;
+}
+
+.interface_game .right_side #launch_round {
+  width: 100%;
+  background: transparent;
+  color: #6495ff;
+  font-size: 22px;
+  font-weight: 700;
+  border: 2px solid #6495ff;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.interface_game .right_side #launch_round:hover {
+  color: #e0e6ff;
+  background: #6495ff;
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
 }

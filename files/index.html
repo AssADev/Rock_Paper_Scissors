@@ -34,7 +34,7 @@
             </div>
             <button id="start">Start a game</button>
             <aside>
-                <h3>Made by <a href="https://github.com/AssADev" target="_blank">AssA</a></h3>
+                <h4>Made by <a href="https://github.com/AssADev" target="_blank">AssA</a></h4>
             </aside>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave">
                 <path
@@ -77,7 +77,6 @@
                     <i class="fas fa-robot"></i>
                 </div>
             </div>
-            <button id="launch_round">Launch the round</button>
             <div class="interface_game">
                 <div class="objects_choice">
                     <h2>Choices</h2>
@@ -99,14 +98,21 @@
                 </div>
                 <div class="logs">
                     <h2>Logs</h2>
-                    <div class="actions">
-                        <p>Test 1</p>
-                        <p>Test 2</p>
-                        <p>Test 3</p>
-                    </div>
+                    <div class="actions"></div>
                 </div>
-                <div class="computer_actions">
-                    <h2>AI</h2>
+                <div class="right_side">
+                    <div class="computer_actions">
+                        <h2>AI</h2>
+                        <div class="computer_choice">
+                            <img src="img/meteorite.png" alt="Meteorite" />
+                            <h3 id="meteorite">Meteorite</h3>
+                        </div>
+                        <div class="last_choice">
+                            <p>Last choice</p>
+                            <h3 id="rocket">Rocket</h3>
+                        </div>
+                    </div>
+                    <button id="launch_round">Launch the round</button>
                 </div>
             </div>
         </article>

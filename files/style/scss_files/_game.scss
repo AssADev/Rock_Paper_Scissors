@@ -68,13 +68,7 @@
                 border-radius: 3px;
                 box-shadow: 2px 2px 5px $shadow;
                 padding: 0 10px;
-
-                &:first-child {
-                    margin-right: 15px;
-                }
-                &:last-child {
-                    margin-left: 15px;
-                }
+                margin: 0 10px;
             }
             i {
                 color: $constrast;
@@ -86,28 +80,12 @@
             border-radius: 3px;
             box-shadow: 2px 2px 5px $shadow;
             padding: 0 10px;
+            margin: 0 10px;
 
             p {
                 color: $light-color;
                 font-size: 26px;
             }
-        }
-    }
-    #launch_round {
-        background: transparent;
-        color: $constrast;
-        font-size: 22px;
-        font-weight: 700;
-        border: 2px solid $constrast;
-        border-radius: 5px;
-        padding: 10px 15px;
-        margin-bottom: 15px;
-        transition: 0.3s;
-
-        &:hover {
-            color: $light-color;
-            background: $constrast;
-            box-shadow: 3px 3px 5px $shadow;
         }
     }
 }
@@ -166,27 +144,6 @@
                     margin-bottom: 10px;
                     filter: drop-shadow(3px 3px 5px $shadow);
                 }
-                h3 {
-                    font-weight: 700;
-                    -webkit-text-fill-color: transparent;
-                    animation: bg_rotate 3s linear infinite;
-
-                    &#meteorite {
-                        background: linear-gradient(90deg, rgb(219, 129, 56) 0%, rgb(211, 79, 27) 50%, rgb(219, 129, 56) 100%);
-                        background-size: 200% 100%;
-                        -webkit-background-clip: text;
-                    }
-                    &#star {
-                        background: linear-gradient(90deg, rgba(215, 209, 15, 1) 0%, rgb(203, 157, 29) 50%, rgba(215, 209, 15, 1) 100%);
-                        background-size: 200% 100%;
-                        -webkit-background-clip: text;
-                    }
-                    &#rocket {
-                        background: linear-gradient(90deg, rgba(15, 215, 213, 1) 0%, rgb(35, 118, 212) 50%, rgba(15, 215, 213, 1) 100%);
-                        background-size: 200% 100%;
-                        -webkit-background-clip: text;
-                    }
-                }
             }
         }
     }
@@ -217,31 +174,86 @@
             border-radius: 5px;
             padding: 15px;
             box-shadow: 3px 3px 5px $shadow;
+            max-height: 215px;
             overflow-y: scroll;
 
+            &::-webkit-scrollbar {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
             p {
                 color: $light-color;
                 line-height: 1.8;
             }
         }
     }
-    .computer_actions {
+    .right_side {
         grid-row: 1 / span 2;
-        position: relative;
-        background: $card-bg;
-        border: 1px solid $border;
-        border-radius: 5px;
-        box-shadow: 3px 3px 5px $shadow;
-        padding: 25px;
 
-        h2 {
-            position: absolute;
-            right: 0;
-            transform: translate(-50%, -115%);
-            background: $light-color;
-            padding: 5px 10px;
-            border-radius: 3px;
+        .computer_actions {
+            position: relative;
+            height: calc(100% - 82px);
+            background: $card-bg;
+            border: 1px solid $border;
+            border-radius: 5px;
             box-shadow: 3px 3px 5px $shadow;
+            padding: 25px;
+
+            h2 {
+                position: absolute;
+                right: 0;
+                transform: translate(-50%, -115%);
+                background: $light-color;
+                padding: 5px 10px;
+                border-radius: 3px;
+                box-shadow: 3px 3px 5px $shadow;
+            }
+            .computer_choice {
+                @include flexColumn;
+
+                background: $royal-blue;
+                border-radius: 3px;
+                border: 1px solid $border;
+                box-shadow: 2px 2px 5px $shadow;
+                padding: 10px 15px 5px;
+
+                img {
+                    width: auto;
+                    margin-bottom: 10px;
+                    filter: drop-shadow(3px 3px 5px $shadow);
+                }
+            }
+            .last_choice {
+                @include flexColumn;
+
+                margin-top: 35px;
+
+                p {
+                    color: $light-color;
+                    font-size: 22px;
+                }
+                h3 {
+                    font-size: 26px;
+                }
+            }
+        }
+        #launch_round {
+            width: 100%;
+            background: transparent;
+            color: $constrast;
+            font-size: 22px;
+            font-weight: 700;
+            border: 2px solid $constrast;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-top: 25px;
+            transition: 0.3s;
+
+            &:hover {
+                color: $light-color;
+                background: $constrast;
+                box-shadow: 3px 3px 5px $shadow;
+            }
         }
     }
 }
