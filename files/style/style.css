@@ -104,8 +104,9 @@ h3#rocket,
   -webkit-background-clip: text;
 }
 
-h3#nothing,
-.rules li span#nothing {
+h3#nothing, h3#letplay,
+.rules li span#nothing,
+.rules li span#letplay {
   background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(50%, #b6b6b6), to(#f7f7f7));
   background: linear-gradient(90deg, #f7f7f7 0%, #b6b6b6 50%, #f7f7f7 100%);
   background-size: 200% 100%;
