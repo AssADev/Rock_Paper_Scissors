@@ -6,11 +6,17 @@ let userScoreboard = document.getElementById("userscoreboard");
 let computerScoreboard = document.getElementById("computerscoreboard");
 
 const choices = document.querySelectorAll(".object");
+const computer_pick = ["Meteorite", "Star", "Rocket"];
+
+let computerChoiceTitle = document.querySelector(".computer_choice h3");
+let lastComputerChoice = document.querySelector(".last_choice h3");
+let lastChoice = "";
+let updateComputerRound = 0;
+
 const start_round_btn = document.getElementById("launch_round");
 const reset_btn = document.getElementById("reset_btn");
 
 const actions_logs = document.querySelector(".actions");
-const computer_pick = ["Meteorite", "Star", "Rocket"];
 
 // Logs :
 let logs = {
@@ -33,15 +39,17 @@ choices.forEach((choice) =>
 
 // Play Function :
 start_round_btn.addEventListener("click", () => {
-    if (document.querySelector(".object.active") == null || userScore == 3 || computerScore == 3) {
+    if (document.querySelector(".object.active") == null || userScore >= 5 || computerScore >= 5) {
         return;
     }
 
     // Check who win :
     let userChoice = userPlay();
     let computerChoice = computerPlay();
+    let infos_logs = "";
+
     if (userChoice === computerChoice) {
-        let infos_logs = `${logs.equal_round} (${userChoice} - ${computerChoice})`;
+        infos_logs = `${logs.equal_round} (${userChoice} - ${computerChoice})`;
         actions_logs.innerHTML += `<p><i class="fas fa-equals"></i> ${infos_logs}</p>`;
     }
     if (
@@ -49,7 +57,7 @@ start_round_btn.addEventListener("click", () => {
         (userChoice === "Star" && computerChoice === "Meteorite") ||
         (userChoice === "Rocket" && computerChoice === "Star")
     ) {
-        let infos_logs = `${logs.win_round} (${userChoice} - ${computerChoice})`;
+        infos_logs = `${logs.win_round} (${userChoice} - ${computerChoice})`;
         actions_logs.innerHTML += `<p><i class="fas fa-check"></i> ${infos_logs}</p>`;
         counterWin();
     }
@@ -58,15 +66,17 @@ start_round_btn.addEventListener("click", () => {
         (userChoice === "Meteorite" && computerChoice === "Star") ||
         (userChoice === "Star" && computerChoice === "Rocket")
     ) {
-        let infos_logs = `${logs.lose_round} (${userChoice} - ${computerChoice})`;
+        infos_logs = `${logs.lose_round} (${userChoice} - ${computerChoice})`;
         actions_logs.innerHTML += `<p><i class="fas fa-times"></i> ${infos_logs}</p>`;
         counterLose();
     }
+
+    updateComputer(computerChoice);
 });
 
+// Check choices :
 function computerPlay() {
-    let randomElement = computer_pick[Math.floor(Math.random() * computer_pick.length)];
-    return randomElement;
+    return computer_pick[Math.floor(Math.random() * computer_pick.length)];
 }
 
 function userPlay() {
@@ -78,10 +88,11 @@ function userPlay() {
     return choice.innerText;
 }
 
+// Counter :
 function counterWin() {
     userScore++;
     userScoreboard.innerText = userScore;
-    if (userScore == 3) {
+    if (userScore == 5) {
         actions_logs.innerHTML += `<p><i class="fas fa-user-astronaut"></i> ${logs.win_game} (${userScore} - ${computerScore})</p>`;
     }
 }
@@ -89,9 +100,23 @@ function counterWin() {
 function counterLose() {
     computerScore++;
     computerScoreboard.innerText = computerScore;
-    if (computerScore == 3) {
+    if (computerScore == 5) {
         actions_logs.innerHTML += `<p><i class="fas fa-robot"></i> ${logs.lose_game} (${userScore} - ${computerScore})</p>`;
     }
+}
+
+// AI Panels :
+function updateComputer(computerChoice) {
+    computerChoiceTitle.innerHTML = computerChoice;
+    computerChoiceTitle.id = computerChoice.toLowerCase();
+
+    if (updateComputerRound != 0) {
+        lastComputerChoice.innerHTML = lastChoiceText;
+        lastComputerChoice.id = lastChoiceID;
+    }
+    lastChoiceText = computerChoiceTitle.innerText;
+    lastChoiceID = computerChoiceTitle.id;
+    updateComputerRound++;
 }
 
 // Reset :
