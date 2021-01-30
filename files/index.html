@@ -22,10 +22,7 @@
             </div>
             <div class="rules">
                 <h2>Rules</h2>
-                <p>
-                    The game is played in 5 rounds, the goal is to reach 3 points to win. You will have to choose between 3 objects that will face an
-                    AI
-                </p>
+                <p>The goal of the game is to reach 3 points to win. You will have to choose between 3 objects that will face an AI</p>
                 <ul>
                     <li>The <span id="meteorite">Meteorite</span> that beats the <span id="rocket">Rocket</span></li>
                     <li>The <span id="star">Star</span> that beats the <span id="meteorite">Meteorite</span></li>
@@ -58,21 +55,15 @@
                 <div class="user_points">
                     <i class="fas fa-user-astronaut"></i>
                     <div class="win_points">
-                        <p>0</p>
+                        <p id="userscoreboard">0</p>
                     </div>
-                </div>
-                <svg height="2px" width="30px" viewBox="0 0 30 2">
-                    <line x1="0px" y1="1px" x2="30px" y2="1px" stroke="#e0e6ff" stroke-width="2"></line>
-                </svg>
-                <div class="rounds">
-                    <p><span id="actual_round">1</span> / 5</p>
                 </div>
                 <svg height="2px" width="30px" viewBox="0 0 30 2">
                     <line x1="0px" y1="1px" x2="30px" y2="1px" stroke="#e0e6ff" stroke-width="2"></line>
                 </svg>
                 <div class="user_points">
                     <div class="win_points">
-                        <p>0</p>
+                        <p id="computerscoreboard">0</p>
                     </div>
                     <i class="fas fa-robot"></i>
                 </div>
@@ -109,7 +100,7 @@
                         </div>
                         <div class="last_choice">
                             <p>Last choice</p>
-                            <h3 id="rocket">Rocket</h3>
+                            <h3 id="nothing">Nothing</h3>
                         </div>
                     </div>
                     <div class="btn">

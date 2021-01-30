@@ -32,6 +32,16 @@ body.ingame .game {
   background: #5a63ff;
 }
 
+::-moz-selection {
+  background: #5a63ff;
+  color: #e0e6ff;
+}
+
+::selection {
+  background: #5a63ff;
+  color: #e0e6ff;
+}
+
 h1,
 h2 {
   font-family: "Orbitron", sans-serif;
@@ -92,6 +102,21 @@ h3#rocket,
   background: linear-gradient(90deg, #0fd7d5 0%, #2376d4 50%, #0fd7d5 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
+}
+
+h3#nothing,
+.rules li span#nothing {
+  background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(50%, #b6b6b6), to(#f7f7f7));
+  background: linear-gradient(90deg, #f7f7f7 0%, #b6b6b6 50%, #f7f7f7 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+}
+
+h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 header {
@@ -373,20 +398,6 @@ header aside h4 a {
   font-size: 24px;
 }
 
-.game .points .rounds {
-  background: #5a63ff;
-  border-radius: 3px;
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-  padding: 0 10px;
-  margin: 0 10px;
-}
-
-.game .points .rounds p {
-  color: #e0e6ff;
-  font-size: 26px;
-}
-
 .interface_game {
   position: relative;
   z-index: 10;
@@ -460,6 +471,10 @@ header aside h4 a {
   padding: 10px 15px 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -527,10 +542,40 @@ header aside h4 a {
   line-height: 1.8;
 }
 
+.interface_game .logs .actions p i {
+  font-size: 14px;
+}
+
+.interface_game .logs .actions p i.fa-equals {
+  color: #b515ff;
+}
+
+.interface_game .logs .actions p i.fa-check {
+  color: #15ff92;
+}
+
+.interface_game .logs .actions p i.fa-times {
+  font-size: 16px;
+  color: #ff1515;
+}
+
+.interface_game .logs .actions p i.fa-user-astronaut {
+  font-size: 16px;
+  color: #6495ff;
+}
+
+.interface_game .logs .actions p i.fa-robot {
+  color: #6495ff;
+}
+
 .interface_game .right_side {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / span 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .interface_game .right_side .computer_actions {

@@ -20,7 +20,7 @@ body.ingame .game {
     transform: translateY(-100%);
 }
 
-// Scrollbar :
+// Scrollbar & Selection :
 ::-webkit-scrollbar {
     background: #1b1e3d;
 }
@@ -31,6 +31,11 @@ body.ingame .game {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #5a63ff;
+}
+
+::selection {
+    background: #5a63ff;
+    color: #e0e6ff;
 }
 
 // Reset :
@@ -63,7 +68,7 @@ ul {
     width: 100%;
     top: 0;
 }
-// H3 & Span :
+// Hn & Span :
 h3,
 .rules li span {
     font-weight: 700;
@@ -85,6 +90,15 @@ h3,
         background-size: 200% 100%;
         -webkit-background-clip: text;
     }
+    &#nothing {
+        background: linear-gradient(90deg, #f7f7f7 0%, #b6b6b6 50%, #f7f7f7 100%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+    }
+}
+
+h2 {
+    user-select: none;
 }
 
 // Import SCSS :

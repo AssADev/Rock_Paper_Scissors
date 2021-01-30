@@ -75,18 +75,6 @@
                 font-size: 24px;
             }
         }
-        .rounds {
-            background: $purple;
-            border-radius: 3px;
-            box-shadow: 2px 2px 5px $shadow;
-            padding: 0 10px;
-            margin: 0 10px;
-
-            p {
-                color: $light-color;
-                font-size: 26px;
-            }
-        }
     }
 }
 
@@ -132,6 +120,7 @@
                 box-shadow: 2px 2px 5px $shadow;
                 padding: 10px 15px 5px;
                 transition: 0.3s;
+                user-select: none;
                 cursor: pointer;
 
                 &.active {
@@ -186,11 +175,34 @@
             p {
                 color: $light-color;
                 line-height: 1.8;
+
+                i {
+                    font-size: 14px;
+
+                    &.fa-equals {
+                        color: #b515ff;
+                    }
+                    &.fa-check {
+                        color: #15ff92;
+                    }
+                    &.fa-times {
+                        font-size: 16px;
+                        color: #ff1515;
+                    }
+                    &.fa-user-astronaut {
+                        font-size: 16px;
+                        color: $constrast;
+                    }
+                    &.fa-robot {
+                        color: $constrast;
+                    }
+                }
             }
         }
     }
     .right_side {
         grid-row: 1 / span 2;
+        user-select: none;
 
         .computer_actions {
             position: relative;
