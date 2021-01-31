@@ -129,7 +129,9 @@ startHomeBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
 
 function resetGame() {
-    document.querySelector(".object.active").classList.remove("active");
+    if (document.querySelector(".object.active") !== null) {
+        document.querySelector(".object.active").classList.remove("active");
+    }
 
     [userScore, computerScore] = [0, 0];
     [userScoreboard.innerText, computerScoreboard.innerText] = [userScore, computerScore];

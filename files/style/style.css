@@ -14,12 +14,6 @@ body {
   background: #171933;
 }
 
-body.ingame header,
-body.ingame .game {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-}
-
 ::-webkit-scrollbar {
   background: #1b1e3d;
 }
