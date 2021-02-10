@@ -301,6 +301,9 @@
         grid-template-rows: repeat(3, auto);
         grid-gap: 35px;
     }
+    .interface_game .objects_choice .objects .object {
+        width: 100%;
+    }
     .game .points {
         margin-top: 90px;
     }
